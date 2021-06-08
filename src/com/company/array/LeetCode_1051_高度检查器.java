@@ -7,7 +7,7 @@ import java.util.Arrays;
  * 非递减: 升序
  * 计数排序
  */
-public class LeetCode_1051 {
+public class LeetCode_1051_高度检查器 {
 
     /**
      * 这个2个数组请上下比较来看
@@ -24,9 +24,6 @@ public class LeetCode_1051 {
      * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
      */
     public static void main(String[] args) {
-        for (int i = 0; i < args.length; i++) {
-
-        }
         int[] heights = {1, 1, 4, 2, 1, 3, 12, 7};
         System.out.println(heightChecker(heights));
     }
