@@ -10,7 +10,7 @@ object Fruit_kotlin {
     @JvmStatic
     fun main(args: Array<String>) {
         val orange3s = ArrayList<Orange3>()
-        //addApple(orange3s);//kotlin 是类型安全的
+//        addApple(orange3s);//kotlin 是类型安全的
     }
 
     //PECS

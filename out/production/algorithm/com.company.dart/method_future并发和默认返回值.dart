@@ -1,9 +1,12 @@
 void main() {
+
   print(isBool());
   f(isBool());
   //报错，isNoble不是bool类型
-  //test(isNoble);
-  // future();
+  // test(isNoble);
+
+  future();
+
   var r = zone(
       (){
         return "123";
@@ -13,8 +16,7 @@ void main() {
 }
 
 void future() {
-
-  //并发拿数据并且串行拿结果；等所有结果完事，但出现error就不会执行then方法，但wait里的then还是会执行
+  //Future.wait 并发拿数据并且串行拿结果；等所有结果完事，但出现error就不会执行then方法，但wait里的then还是会执行
   var start = DateTime.now().microsecondsSinceEpoch;
   print(start);
   Future.wait([
@@ -34,6 +36,7 @@ void future() {
   // Stream.fromFutures([])和futrue.wait 一样，只不过其中一个异步事件拿到结果就返回，可以获取多次
 }
 
+//未使用别名的方法形参，其实也只是要一个无参的方法，有一个返回值并且是zone的返回值
 R zone<R>(R body()){
   return body();
 }

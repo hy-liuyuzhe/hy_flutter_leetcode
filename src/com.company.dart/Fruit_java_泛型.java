@@ -3,7 +3,7 @@ package com.company.dart;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Fruit {
+public class Fruit_java_泛型 {
 
     public static void main(String[] args) {
         List<Orange2> orange2s = new ArrayList<>();
