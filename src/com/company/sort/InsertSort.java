@@ -10,11 +10,13 @@ import java.util.Arrays;
 public class InsertSort {
 
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+//        int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+        int[] nums = {5, 6, 4, 7};
         insertSort(nums);
         System.out.println(Arrays.toString(nums));
     }
 
+    //从第二元素开始遍历，跟左边排好序的元素比较，找到合适的位置放入
     private static void insertSort(int[] nums) {
         for (int i = 1, j, current; i < nums.length; i++) {
             current = nums[i];//放到一个临时变量

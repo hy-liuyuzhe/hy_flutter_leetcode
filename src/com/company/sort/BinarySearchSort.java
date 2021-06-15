@@ -13,6 +13,7 @@ public class BinarySearchSort {
         System.out.println(binarySearchSort(nums, 11));
     }
 
+    //取中间值进行比较，如果等于就找到并且返回其索引，如果小于则目标值在右边，如果大于则在左边；不断重复取中间值查找
     private static int binarySearchSort(int[] nums, int target) {
         int left = 0;
         int right = nums.length - 1;

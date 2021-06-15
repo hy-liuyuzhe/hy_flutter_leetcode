@@ -28,8 +28,7 @@ public class LeetCode_53_最大子数组的和 {
      * 求的是大数组中最大子数组，所以缩小问题，求1个数组2个数组3个数组。。。的大小；依次加起来和一个保存最大值的临时变量去比较
      *
      * 若nums[i - 1]<0说明 nums[i-1]+nums[i] 还不如nums[i], 起负贡献
-     * @param nums
-     * @return
+     * numbs[i]本身是负的，需要加前面的，以满足连续子数组的大小逻辑
      */
     private static int maxSubArray(int[] nums) {
         int res = nums[0];

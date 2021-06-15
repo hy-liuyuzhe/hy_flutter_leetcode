@@ -11,6 +11,9 @@ public class SelectSort {
         System.out.println(Arrays.toString(selectSort(nums)));
     }
 
+    /**
+     * 不断的遍历未排序的数组，找到最小的放数组前面
+     */
     private static int[] selectSort(int[] nums) {
         for (int i = 0; i < nums.length - 1; i++) {
             int min = i;

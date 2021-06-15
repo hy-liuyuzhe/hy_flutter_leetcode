@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class HeapSort {
 
     public static void main(String[] args) {
-        int[] nums = {5, 6, 4, 7};
+        int[] nums = {5, 6, 4, 7,23,2,9};
         adJustHeap(nums);
         System.out.println(Arrays.toString(nums));
         heapSort(nums);
