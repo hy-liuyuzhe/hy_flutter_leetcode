@@ -2,6 +2,8 @@ package com.company.sort;
 
 /**
  * 翻转链表
+ *
+ * 递归就是通过重复调用函数自身实现循环；满足终止条件时会逐层返回来结束循环
  */
 public class ReverseList反转链表 {
 
@@ -24,12 +26,14 @@ public class ReverseList反转链表 {
 
         head.sequenceShow();
 
-        ReverseListNode newRoot = reverseList3(head);
+        ReverseListNode newRoot = reverseList1(head);
         System.out.println();
         newRoot.sequenceShow();
     }
 
     /**
+     * 迭代方式
+     *
      * 使用prev和curr 2个指针来反转每一个节点; 从头节点开始, 依次往后遍历, 分别把当前节点和下一个节点持久化, 并反向链接上;
      * 然后输入最后一个节点, 也就是第一个节点
      */
@@ -46,8 +50,12 @@ public class ReverseList反转链表 {
     }
 
     /**
-     * 通过递归找到最后一个节点, 然后每个递归栈中返回这个节点作为结果;
-     * 把最后一个节点的指针指向它的前一个节点
+     * 递归方式
+     *
+     * 1.找到最后一个节点并返回。因为是链表翻转所以最后一个节点，翻转后就变成第一个节点；我们递归找到最后一个节点，并作为最终参数返回
+     * 2.让每一个节点反向指向它上一个节点；实现方式，递归到最后一个节点开始逐层返回递归，
+     * 并且让自己的下一个节点指向自己，自己不再指向下一个节点（让指向箭头翻转180度，反向指向节点）
+     *
      */
     private static ReverseListNode reverseList2(ReverseListNode head) {
         if (head == null || head.next == null) {
