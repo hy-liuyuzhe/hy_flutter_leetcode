@@ -7,13 +7,19 @@ object 理解hashMap {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        hashmaptest()
+//        hashmaptest()
+        hashmapfor()
 //        hashcodetest()
 //        Stringhashcodetest()
     }
 
+    private fun hashmapfor() {
+        val map = HashMap<String, Int>();
+        ArrayList<Pair<String,Int>>()
+    }
+
     private fun hashmaptest() {
-//        val map = HashMap<HPBean, Int>();
+        val map = HashMap<HPBean, Int>();
         val hpBean = HPBean()
         println("hpBean.hashcode 第一次 ${hpBean.hashCode()}")
         println("hpBean.hashcode 第二次 ${hpBean.hashCode()}")

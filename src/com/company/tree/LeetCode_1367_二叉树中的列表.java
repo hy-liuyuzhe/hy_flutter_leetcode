@@ -16,14 +16,14 @@ public class LeetCode_1367_二叉树中的列表 {
     }
 
     /**
-     * 相当于前序遍历, 先左后右
+     * 前序遍历,从根节点开始不断尝试和链表头去匹配（使用isSub方法）
      * isSub拿节点和链表去做匹配，如果未满足就换个根节点（让左右儿子上）继续匹配（调用isSubPath）
      */
     private static boolean isSubPath(ListNode head, TreeNode root) {
         if (head == null){//完全匹配了
             return true;
         }
-        if (root==null){//未匹配树不够用了
+        if (root==null){//未匹配，树不够用了
             return false;
         }
         /*匹配查找一定要从链表头开始*/
@@ -37,7 +37,7 @@ public class LeetCode_1367_二叉树中的列表 {
         if (head == null){//完全匹配了
             return true;
         }
-        if (node==null){//未匹配树不够用了
+        if (node==null){//未匹配，树不够用了
             return false;
         }
         if (head.val != node.val){//值不对
