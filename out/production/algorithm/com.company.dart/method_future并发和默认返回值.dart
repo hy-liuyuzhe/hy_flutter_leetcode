@@ -1,5 +1,3 @@
-import 'Singleton.dart';
-
 void main() {
   // print(isBool());
   // f(isBool());
