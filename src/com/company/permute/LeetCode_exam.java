@@ -1,4 +1,4 @@
-package com.company.string;
+package com.company.permute;
 
 
 import java.util.ArrayList;
