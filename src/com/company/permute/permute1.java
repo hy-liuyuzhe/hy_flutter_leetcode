@@ -17,11 +17,11 @@ public class permute1 {
         ArrayList<List<Integer>> ans = new ArrayList<>();
         boolean[] used = new boolean[len];
         Deque<Integer> path = new ArrayDeque<>();
-        dfs2(array, 0, len, used, path, ans);
+        dfs1(array, 0, len, used, path, ans);
         return ans;
     }
 
-    private static void dfs2(int[] array, int depth, int len, boolean[] used, Deque<Integer> path, ArrayList<List<Integer>> ans) {
+    private static void dfs1(int[] array, int depth, int len, boolean[] used, Deque<Integer> path, ArrayList<List<Integer>> ans) {
         if (len == depth) {
             ans.add(new ArrayList<>(path));
         } else {
@@ -30,7 +30,7 @@ public class permute1 {
                 if (!used[i]) {
                     path.add(num);
                     used[i] = true;
-                    dfs2(array, depth + 1, len, used, path, ans);
+                    dfs1(array, depth + 1, len, used, path, ans);
                     used[i] = false;
                     path.removeLast();
                 }
