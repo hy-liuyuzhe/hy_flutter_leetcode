@@ -10,12 +10,12 @@ import java.util.List;
 public class LeetCode_15_三数之和 {
 
     public static void main(String[] args) {
-//        int[] nums = new int[]{-1, 0, 1, 2, -1, -4};
-        int[] nums = {-1, 0, 1, 2, -1, -4};
+        int[] nums = {-2, 0, 0, 2, 2};
+//        int[] nums = {-1, 0, 1, 2, -1, -4};
         System.out.println(solution1(nums));
     }
 
-    //使用排序后，重复元素在一起的技巧来去重
+    //使用排序后，重复元素在一起的技巧来去重；（排序是去重的基础）
     public static List<List<Integer>> solution1(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         int len = nums.length;
