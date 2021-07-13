@@ -31,11 +31,11 @@ public class LeetCode_46 {
         } else {
             for (int num : nums) {
                 if (!tmp.contains(num)) {
-                    ArrayList<Integer> path = new ArrayList<>(tmp);
-                    path.add(num);
-//                    tmp.add(num);
-                    dfs(nums, path, ans);
-//                    tmp.remove(tmp.size() - 1);
+//                    ArrayList<Integer> path = new ArrayList<>(tmp);
+//                    path.add(num);
+                    tmp.add(num);
+                    dfs(nums, tmp, ans);
+                    tmp.remove(tmp.size() - 1);
                 }
             }
         }
