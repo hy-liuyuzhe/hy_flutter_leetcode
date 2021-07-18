@@ -38,6 +38,7 @@ public class permute2 {
      */
     private static void dfs2(int[] array, int depth, int len, boolean[] used, Deque<Integer> path, ArrayList<List<Integer>> ans) {
         if (len == depth) {
+            System.out.println(path.size());
             ans.add(new ArrayList<>(path));
         } else {
             for (int i = 0; i < array.length; i++) {

@@ -43,6 +43,11 @@ public class LeetCode_exam {
 
     static List<String> ans = new ArrayList<>();
 
+    /**
+     * this version source can not repeat element
+     * @param nums
+     * @param tmp
+     */
     private static void dfs(char[] nums, List<Character> tmp) {
         if (nums.length == tmp.size()) {
             ans.add(tmp.stream().map((Object::toString)).collect(Collectors.joining()));
