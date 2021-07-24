@@ -30,9 +30,10 @@ public class LeetCode_167_两数之和2 {
     private static int[] twoSum2(int[] nums, int target) {
         int l = 0 , r = nums.length-1;
         while (l<r){
-            if (nums[l]+nums[r]==target){
+            final int sum = nums[l] + nums[r];
+            if (sum ==target){
                 return new int[]{l+1,r+1};
-            }else if (nums[l]+nums[r]<target){
+            }else if (sum <target){
                 l++;
             }else {
                 r--;

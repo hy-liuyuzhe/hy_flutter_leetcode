@@ -3,7 +3,22 @@ package com.company.string;
 import java.util.*;
 
 /**
- * 查找最长公共前缀
+ * 子串的元素必须挨着
+ *
+ * 子串 长度为n
+ * 长度为1的子串有n个
+ * 长度为2的子串有n-1个
+ *
+ * 长度为n的子串有1个
+ * 子串的数量 n(n+1)/2
+ * ---------------------
+ * 子序列
+ * 子序列的元素不需要挨着
+ * 子序列就是组合元素
+ * 长度为1的子序列是 C 下n上1
+ * 长度为n的子序列有1个
+ *
+ *  子序列总数是 2的n次幂
  *
  * @author liuyuzhe
  */
@@ -11,27 +26,33 @@ public class Leetcode_3_不重复字符串 {
 
     public static void main(String[] args) {
         String s = "loddktdji";
-        System.out.println(notRepeatStringCount(s));
+        System.out.println(notRepeatStringCount2(s));
     }
 
+    /**
+     * 遍历时间复杂度搞，通过hash记住位置，一下跳转到指定索引
+     */
     public static int notRepeatStringCount2(String s) {
-        int max = 0, left = 0;
+        int max = 0;
         HashMap<Character, Integer> map = new HashMap<>();
         int n = s.length();
-        for (int i = 0; i < n; i++) {
-            if (map.containsKey(s.charAt(i))){
-                //map存的是索引所以+1；在求的是重复元素的位置，在这个位置从整个字符串从左边数包含多少个元素
-                left = Math.max(left,map.get(s.charAt(i))+1);
+        //left是慢指针，j是快指针
+        for (int left = 0, j = 0; j < n; j++) {
+            if (map.containsKey(s.charAt(j))){
+                //map存的是索引,指向的是重复元素的位置，我们要让慢指针+1指向不重复元素；
+                //让慢指针跳跃到指定位置；避免了遍历删除
+                left = Math.max(left,map.get(s.charAt(j))+1);
             }
 
-            map.put(s.charAt(i), i);//是重复元素，我们就覆盖其索引的值
-            max = Math.max(max, i + 1 - left);//i+1表示当前字符串的length最大值了；当有重复left会被赋值，从而减去左边重复字符的索引
+            map.put(s.charAt(j), j);//是重复元素，我们就覆盖其索引的值
+            max = Math.max(max, j + 1 - left);//j+1表示当前字符串的length最大值了；当有重复left会被赋值，从而减去左边重复字符的索引
         }
         return max;
     }
 
     public static int notRepeatStringCount(String s) {
         char[] source = s.toCharArray();
+//        这里使用链表在判断重复元素，会遍历整个链表复杂度是O(n),应该使用hashSet
         LinkedList<Character> stack = new LinkedList<>();
         int ans = 0;
         int count = 0;

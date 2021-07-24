@@ -24,7 +24,7 @@ public class LeetCode_977_有序数组的平方 {
                 ans[position]=nums[j]*nums[j];
                 j--;
             }
-            position--;
+            position--;//ans被赋值过了，position指针移动一下
         }
         return ans;
     }

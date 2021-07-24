@@ -24,6 +24,7 @@ public class LeetCode_733_图像渲染 {
         System.out.println(Arrays.deepToString(floodFill2(image, 0, 0, 2)));
     }
 
+    //只有起点颜色和新节点不同才去染色
     public static int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
         int originColor = image[sr][sc];
         if (originColor != newColor) {
@@ -32,6 +33,7 @@ public class LeetCode_733_图像渲染 {
         return image;
     }
 
+//    不断的枚举周围元素，如果和起点颜色一样就改变它
     private static void dfs(int[][] image, int x, int y, int originColor, int newColor) {
         if (    x < 0
                 || y < 0

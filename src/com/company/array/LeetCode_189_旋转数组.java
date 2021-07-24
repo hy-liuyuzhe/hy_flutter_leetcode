@@ -9,7 +9,7 @@ public class LeetCode_189_旋转数组 {
 
     public static void main(String[] args) {
         int[] arr = {6, 7, 5};
-        rotate2(arr, 2);
+        rotate(arr, 2);
     }
 
     public static void rotate(int[] nums, int k) {
