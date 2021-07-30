@@ -67,6 +67,9 @@ public class LeetCode_91_中序遍历 {
         if (root == null) {
             return;
         }
+//        1.走到无左节点时（也就当前是叶子节点）；
+//        2.它本身也是一个无左节点的根节点；
+//        3.会尝试获取右节点去拿值；无右则返回上一层，代表上一层的left节点已经处理完毕
         helper(root.left, res);
         res.add(root.val);
         helper(root.right, res);

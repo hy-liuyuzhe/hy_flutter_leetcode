@@ -2,7 +2,8 @@ package com.company.array;
 
 public class Leetcode_695_岛屿的最大面积 {
     public static void main(String[] args) {
-        int[][] nums = new int[][]{{0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+        int[][] nums = new int[][]{
+                {0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
                 {0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
                 {0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0},

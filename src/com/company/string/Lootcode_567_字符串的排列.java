@@ -44,6 +44,7 @@ public class Lootcode_567_字符串的排列 {
         }
         System.out.println(Arrays.toString(pFreq));
 
+//        字符种类的数量
         int pCount = 0;
         for (int i = 0; i < pFreq.length; i++) {
             if (pFreq[i] > 0) pCount++;
@@ -61,7 +62,7 @@ public class Lootcode_567_字符串的排列 {
             }
             right++;
 
-            //字符总数已经满足
+            //字符种类总数已经满足，字符个数也满足，就是匹配（不考虑字符顺序）
             while (pCount == winCount) {
                 if (right - left == pLen) {
                     return true;

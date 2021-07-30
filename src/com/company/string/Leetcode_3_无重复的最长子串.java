@@ -22,7 +22,7 @@ import java.util.*;
  *
  * @author liuyuzhe
  */
-public class Leetcode_3_不重复字符串 {
+public class Leetcode_3_无重复的最长子串 {
 
     public static void main(String[] args) {
         String s = "loddktdji";
@@ -34,6 +34,7 @@ public class Leetcode_3_不重复字符串 {
      */
     public static int notRepeatStringCount2(String s) {
         int max = 0;
+//        key字符，value是索引
         HashMap<Character, Integer> map = new HashMap<>();
         int n = s.length();
         //left是慢指针，j是快指针
