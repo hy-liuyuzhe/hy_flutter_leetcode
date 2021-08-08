@@ -1,5 +1,6 @@
 package com.company.program;
 
+import java.util.ArrayDeque;
 import java.util.Arrays;
 
 /**
@@ -33,7 +34,6 @@ public class LeetCode_198 {
         if (memo[start] != -1) {
             return memo[start];
         }
-
         int res = Math.max(nums[start] + rob1(nums, start + 2, memo), rob1(nums, start + 1, memo));
         memo[start] = res;
         return res;

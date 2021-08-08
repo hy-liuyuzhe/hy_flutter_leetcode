@@ -10,6 +10,8 @@ public class permute2 {
 
     public static void main(String[] args) {
         int[] nums = {1, 2, 1};
+        int[] b = new int[3];
+        System.out.println(Arrays.toString(b));
         System.out.println(permutation(nums));
     }
 
