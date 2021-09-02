@@ -35,8 +35,8 @@ public class permute2 {
      * 则会判断当前节点和上一个节点是一样的，并且上一个节点还没有被使用，那么你往下走树的一层深度，一定会使用这个节点（未被使用的上一个节点），
      * 那么这样就会导致排列出来的数是已经排列过的了；所以这种情况我们要剪掉，不保存这样的排列
      *
-     * i>0&&array[i]==array[i-1] &&!used[i-1] 这句是核心，因为全排列的遍历是一个树ji
-     *
+     * i>0&&array[i]==array[i-1] &&!used[i-1] 这句是核心，因为全排列的遍历是一个树
+     * 121,排序后变112,在遍历时第二棵树1和第一课树1是会得到一样的结果所以我们会continue来剪掉这个分支
      */
     private static void dfs2(int[] array, int depth, int len, boolean[] used, Deque<Integer> path, ArrayList<List<Integer>> ans) {
         if (len == depth) {
